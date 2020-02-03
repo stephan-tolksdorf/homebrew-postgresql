@@ -21,7 +21,7 @@ class Postgresql < Formula
   def install
     # avoid adding the SDK library directory to the linker search path
     ENV["XML2_CONFIG"] = "xml2-config --exec-prefix=/usr"
-    ENV["PYTHON"] = "python3"
+    ENV["PYTHON"] = "#{HOMEBREW_PREFIX}/bin/python3"
 
     ENV.prepend "LDFLAGS", "-L#{Formula["openssl@1.1"].opt_lib} -L#{Formula["readline"].opt_lib}"
     ENV.prepend "CPPFLAGS", "-I#{Formula["openssl@1.1"].opt_include} -I#{Formula["readline"].opt_include}"
