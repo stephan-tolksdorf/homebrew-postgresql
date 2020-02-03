@@ -56,7 +56,7 @@ class Postgresql < Formula
     end
 
     system "./configure", *args
-    system "make"
+    system "make || make -j1"
     system "make", "install-world", "datadir=#{pkgshare}",
                                     "libdir=#{lib}",
                                     "pkglibdir=#{lib}/postgresql",
